@@ -1,4 +1,4 @@
-<div class="ui raised very padded text container segment">
+<div class="ui raised very padded text  segment" style="margin-top: 5%;">
 
 
 	<div class="ui four column grid">
@@ -14,8 +14,8 @@
 
 	</div>
 
-	<app-search-bar></app-search-bar>
-	<app-page-list></app-page-list>
+	<app-search-bar (transmitter)="onSearch($event)"></app-search-bar>
+	<app-page-list [pageListy]="pages"></app-page-list>
 
 
 

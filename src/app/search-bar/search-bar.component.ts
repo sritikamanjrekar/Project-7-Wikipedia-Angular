@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -12,28 +12,29 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Output() transmitter=new EventEmitter<string>();
   term: string = ''
 
-  onInit(){
+  onFormSubmitKuchBhi(event:any){
+    event.preventDefault();
     console.log(this.term);
-    
+    this.transmitter.emit(this.term)
   }
 
-
-  
-
-
+  // onInit(){
+  //   console.log(this.term);
+    
+  // }
 
   //  userInput(data:string){
 
   //   console.log(data)
   //  }
 
-  onFormSubmitKuchBhi(event:any){
-    event.preventDefault();
-    console.log(this.term);
-    
-  }
+  
+
+ 
 
 
 

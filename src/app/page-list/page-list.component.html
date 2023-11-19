@@ -1,5 +1,15 @@
-<div class="ui list">
-  <div class="item">Apples</div>
-  <div class="item">Pears</div>
-  <div class="item">Oranges</div>
-</div>
+<table class="ui celled table">
+  <thead>
+    <tr><th>Title</th>
+    <th>Word Count</th>
+    <th>Description</th>
+  </tr></thead>
+  <tbody>
+    <tr *ngFor="let page of pageListy">
+      <td data-label="Title">{{page.title}}</td>
+      <td data-label="Word Count">{{page.wordcount}}</td>
+      <td data-label="Description" [innerHTML]="page.snippet"></td>
+    </tr>
+    
+  </tbody>
+</table>
